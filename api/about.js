@@ -1,4 +1,4 @@
-const { renderAboutCard } = require("../src/about-card");
+const { renderAboutCard } = require("../src/about-card.js");
 const { fetchStats } = require("../src/stats-card");
 const { renderError } = require("../src/common.js")
 
