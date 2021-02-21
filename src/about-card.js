@@ -56,4 +56,4 @@ const renderSVG = (stats, options) => {
     cardWidth = 500, 
   } = options || {};
   
-  const title = renderNameTitle(name, color, ccfLevel, "的基本信息", cardWidth);
+  const title = renderNameTitle(name, color, ccfLevel, "的基本信息", cardWidth, "");
