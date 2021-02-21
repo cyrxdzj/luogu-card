@@ -37,4 +37,23 @@ async function fetchStats(id) {
   stats.followerCount = user.followerCount;
   stats.followingCount = user.followingCount;
   
+  return stats;
+}
+
+const renderSVG = (stats, options) => {
+  const {
+    name,
+    color,
+    ccfLevel,
+    slogan,
+    followerCount,
+    followingCount
+  } = stats;
   
+  const { 
+    hideTitle, 
+    darkMode,
+    cardWidth = 500, 
+  } = options || {};
+  
+  const title = renderNameTitle(name, color, ccfLevel, "的基本信息", cardWidth);
