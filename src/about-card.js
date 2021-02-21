@@ -57,3 +57,15 @@ const renderSVG = (stats, options) => {
   } = options || {};
   
   const title = renderNameTitle(name, color, ccfLevel, "的基本信息", cardWidth, "");
+  
+  return new Card({
+    width: cardWidth - 2*paddingX,
+    height: datas.length*30 + 10,
+    hideTitle,
+    darkMode,
+    title,
+    body,
+  }).render();
+}
+
+module.exports = { fetchStats, renderSVG }
