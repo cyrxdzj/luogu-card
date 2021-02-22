@@ -11,7 +11,7 @@ const {
  * @param {number} id 用户id
  * @returns {Object} 获取的用户数据 {name, color, ccfLevel, slogan, followerCount, followingCount}
  */
-async function fetchStats(id) {
+async function fetchAbout(id) {
   //debug 测试请求
   const res = await axios.get(`https://tc-0glpuj1k4e75e5ec-1300876583.ap-shanghai.service.tcloudbase.com/luogu?id=${id}`);
 
@@ -56,6 +56,8 @@ const renderSVG = (stats, options) => {
     cardWidth = 500, 
   } = options || {};
   
+  const paddingX = 25;
+  
   const title = renderNameTitle(name, color, ccfLevel, "的基本信息", cardWidth, "");
   
   return new Card({
@@ -68,4 +70,4 @@ const renderSVG = (stats, options) => {
   }).render();
 }
 
-module.exports = { fetchStats, renderSVG }
+module.exports = { fetchAbout, renderSVG }
