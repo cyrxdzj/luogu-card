@@ -17,7 +17,7 @@ async function fetchAbout(id) {
 
   //const res = await axios.get(`https://www.luogu.com.cn/user/${id}?_contentOnly`)
 
-  const stats = {
+  const about = {
     name: "NULL",
     color: "Gray",
     ccfLevel: 0,
@@ -26,21 +26,21 @@ async function fetchAbout(id) {
     followingCount:0
   }
   if(res.data.code !== 200) {
-    return stats;
+    return about;
   }
   const user = res.data.currentData.user;
   
-  stats.name = user.name;
-  stats.color = user.color;
-  stats.ccfLevel = user.ccfLevel;
-  stats.slogan = user.slogan;
-  stats.followerCount = user.followerCount;
-  stats.followingCount = user.followingCount;
+  about.name = user.name;
+  about.color = user.color;
+  about.ccfLevel = user.ccfLevel;
+  about.slogan = user.slogan;
+  about.followerCount = user.followerCount;
+  about.followingCount = user.followingCount;
   
-  return stats;
+  return about;
 }
 
-const renderSVG = (stats, options) => {
+const renderSVG = (about, options) => {
   const {
     name,
     color,
@@ -48,7 +48,7 @@ const renderSVG = (stats, options) => {
     slogan,
     followerCount,
     followingCount
-  } = stats;
+  } = about;
   
   const { 
     hideTitle, 
@@ -57,12 +57,12 @@ const renderSVG = (stats, options) => {
   } = options || {};
   
   const paddingX = 25;
-  
+  const body = renderAboutText("此人共关注了${about.followingCount}人，且被${about.followerCount}人所关注。",about.slogan);
   const title = renderNameTitle(name, color, ccfLevel, "的基本信息", cardWidth, "");
   
   return new Card({
     width: cardWidth - 2*paddingX,
-    height: datas.length*30 + 10,
+    height: 200 + 10,
     hideTitle,
     darkMode,
     title,
