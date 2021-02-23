@@ -57,7 +57,7 @@ const renderSVG = (about, options) => {
   } = options || {};
   
   const paddingX = 25;
-  const body = renderAboutText("此人共关注了${about.followingCount}人，且被${about.followerCount}人所关注。",about.slogan);
+  const body = renderAboutText(about.followingCount,about.followerCount,about.slogan);
   const title = renderNameTitle(name, color, ccfLevel, "的基本信息", cardWidth, "");
   
   return new Card({
