@@ -40,6 +40,12 @@ async function fetchAbout(id) {
   return about;
 }
 
+async function fetchWebsite(id) {
+  var res;
+  await axios.get(`https://www.luogu.com.cn/user/${id}`).then(function (response) {res=response;});
+  
+}
+
 const renderSVG = (about, options) => {
   const {
     name,
