@@ -40,12 +40,6 @@ async function fetchAbout(id) {
   return about;
 }
 
-async function fetchWebsite(id) {
-  var res;
-  await axios.get(`https://www.luogu.com.cn/user/${id}`).then(function (response) {res=response;});
-  
-}
-
 const renderSVG = (about, options) => {
   const {
     name,
@@ -63,7 +57,7 @@ const renderSVG = (about, options) => {
   } = options || {};
   
   const paddingX = 25;
-  const body = renderAboutText(about.followingCount,about.followerCount,about.slogan);
+  const body = renderAboutText(about);
   const title = renderNameTitle(name, color, ccfLevel, "的基本信息", cardWidth, "");
   
   return new Card({
