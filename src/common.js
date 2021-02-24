@@ -182,4 +182,5 @@ module.exports = {
   renderCCFBadge,
   renderChart,
   renderNameTitle,
+  renderAboutText
 };
