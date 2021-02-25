@@ -175,6 +175,29 @@ const renderNameTitle = (name, color, ccfLevel, title, cardWidth, rightTop) => {
   </g>`;
 }
 
+const renderAboutText = (followerCount,followingCount,slogan) => {
+  var line1_str=`TA关注了${slogan}人，共有${followerCount}人关注TA。`;
+  var line1 = `
+    <g transform="translate(0,0)">
+      <text x="0" y="15" class="text">${line1_str}</text>
+    </g>`
+  var line2;
+  if(slogan)
+  {
+    line2 = `
+      <g transform="translate(0,30)">
+        <text x="0" y="15" class="text">${slogan}</text>
+      </g>`
+  }
+  else
+  {
+    line2 = `
+        <g transform="translate(0,30)">
+          <text x="0" y="15" class="text" fill="#848484">这个人很懒，连个性签名也懒得写</text>
+        </g>`
+  }
+  return line1+line2;
+}
 module.exports = { 
   NAMECOLOR,
   Card,
