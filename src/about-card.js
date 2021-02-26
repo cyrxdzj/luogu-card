@@ -59,8 +59,10 @@ const renderSVG = (about, options) => {
   
   const paddingX = 25;
   const body = renderAboutText(about.followerCount,about.followingCount,about.slogan);
-  //const title = renderNameTitle(name, color, ccfLevel, "的基本信息", cardWidth, "");
-  const title = "";
+  const title = renderNameTitle(name, color, ccfLevel, "的基本信息", cardWidth, "");
+  
+  console.log(title);
+  console.log(body);
   
   return new Card({
     width: cardWidth - 2*paddingX,
