@@ -175,11 +175,16 @@ const renderNameTitle = (name, color, ccfLevel, title, cardWidth, rightTop) => {
   </g>`;
 }
 
+/**
+ * 
+ * @param {number} followerCount 粉丝数量
+ * @param {number} followingCount 此用户关注的人数
+ * @param {string} slogan 个性签名
+ */
 const renderAboutText = (followerCount,followingCount,slogan) => {
-  var line1_str=`TA关注了${slogan}人，共有${followerCount}人关注TA。`;
   let line1 = `
     <g transform="translate(0,0)">
-      <text x="0" y="15" class="text">${line1_str}</text>
+      <text x="0" y="15" class="text">TA关注了${followingCount}人，共有${followerCount}人关注TA。</text>
     </g>`
   let line2 = "";
   if(slogan)
