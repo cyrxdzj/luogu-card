@@ -177,11 +177,11 @@ const renderNameTitle = (name, color, ccfLevel, title, cardWidth, rightTop) => {
 
 const renderAboutText = (followerCount,followingCount,slogan) => {
   var line1_str=`TA关注了${slogan}人，共有${followerCount}人关注TA。`;
-  var line1 = `
+  let line1 = `
     <g transform="translate(0,0)">
       <text x="0" y="15" class="text">${line1_str}</text>
     </g>`
-  var line2;
+  let line2 = "";
   if(slogan)
   {
     line2 = `
