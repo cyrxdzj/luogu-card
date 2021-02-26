@@ -1,4 +1,4 @@
-const { renderAboutCard } = require("../src/about-card.js");
+const { fetchAbout } = require("../src/about-card.js");
 const { fetchStats } = require("../src/stats-card");
 const { renderError } = require("../src/common.js")
 
@@ -27,7 +27,7 @@ module.exports = async (req, res) => {
   }
 
   return res.send(
-    renderAboutCard(stats, scores, {
+    fetchAbout(stats, scores, {
       hideTitle: stats === null ? true : hide_title,
       darkMode: dark_mode,
       cardWidth: clamp(500, 1920, card_width),
