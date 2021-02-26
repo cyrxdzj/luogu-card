@@ -64,14 +64,16 @@ const renderSVG = (about, options) => {
   console.log(title);
   console.log(body);
   
-  return new Card({
+  /*return new Card({
     width: cardWidth - 2*paddingX,
     height: 200 + 10,
     hideTitle,
     darkMode,
     title,
     body,
-  }).render();
+  }).render();*/
+  
+  return `<svg>${title}${body}</svg>`;
 }
 
 module.exports = { fetchAbout, renderSVG }
