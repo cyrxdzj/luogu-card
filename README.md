@@ -70,31 +70,31 @@
 1. **隐藏标题**，只需在链接最后带上`&hide_title=true`即可，例如：
 
    ```markdown
-   ![dengzijun的练习情况](https://luogu-card.vercel.app/api?id=387836&hide_title=true)
+   ![dengzijun的练习情况](https://luogu-card.vercel.app/practice?id=387836&hide_title=true)
    ```
 
    效果：
 
-   ![dengzijun的练习情况](https://luogu-card.vercel.app/api?id=387836&hide_title=1)
+   ![dengzijun的练习情况](https://luogu-card.vercel.app/practice?id=387836&hide_title=1)
 
 2. **黑暗模式**，只需在链接最后带上`&dark_mode=true`即可，例如：
 
    ```markdown
-   ![dengzijun的练习情况](https://luogu-card.vercel.app/api?id=387836&dark_mode=true)
+   ![dengzijun的练习情况](https://luogu-card.vercel.app/practice?id=387836&dark_mode=true)
    ```
 
    效果：
 
-   ![dengzijun的练习情况](https://luogu-card.vercel.app/api?id=387836&dark_mode=1)
+   ![dengzijun的练习情况](https://luogu-card.vercel.app/practice?id=387836&dark_mode=1)
 3. **自定义宽度**，默认500，限制宽度在500到1920之间，只需在链接最后带上`&card_width=需要的宽度`即可，例如：
 
    ```markdown
-   ![dengzijun的练习情况](https://luogu-card.vercel.app/api?id=387836&card_width=750)
+   ![dengzijun的练习情况](https://luogu-card.vercel.app/practice?id=387836&card_width=750)
    ```
 
    效果：
 
-   ![dengzijun的练习情况](https://luogu-card.vercel.app/api?id=387836&card_width=750)
+   ![dengzijun的练习情况](https://luogu-card.vercel.app/practice?id=387836&card_width=750)
    
 
 ## 自行部署
