@@ -61,19 +61,16 @@ const renderSVG = (about, options) => {
   const body = renderAboutText(about.followerCount,about.followingCount,about.slogan);
   const title = renderNameTitle(name, color, ccfLevel, "的基本信息", cardWidth, "");
   
-  console.log(title);
-  console.log(body);
-  
-  /*return new Card({
+  return new Card({
     width: cardWidth - 2*paddingX,
     height: 200 + 10,
     hideTitle,
     darkMode,
     title,
     body,
-  }).render();*/
+  }).render();
   
-  return `<svg>${title}${body}</svg>`;
+  //return `<svg>${title}${body}</svg>`;
 }
 
 module.exports = { fetchAbout, renderSVG }
