@@ -10,7 +10,7 @@ module.exports = async (req, res) => {
   }
   else if(req.query.function=="rnt")
   {
-    return res.send("<svg>"+renderNameTitle(req.query.name,req.query.color,parseInt(req.query.ccfLevel),req.query.title,parseInt(req.query.cardWidth),req.query.title)+"</svg>");
+    return res.send("<svg>"+renderNameTitle(req.query.name,req.query.color,parseInt(req.query.ccfLevel),req.query.title,parseInt(req.query.cardWidth),req.query.rightTop)+"</svg>");
   }
   else
   {
