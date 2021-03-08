@@ -177,8 +177,10 @@ const renderNameTitle = (name, color, ccfLevel, title, cardWidth, rightTop) => {
 
 /**
  * 
+ * @param {string} userType 用户类型
  * @param {number} followerCount 粉丝数量
  * @param {number} followingCount 此用户关注的人数
+ * @param {number} ranking 咕值排名
  * @param {string} slogan 个性签名
  */
 const renderAboutText = (userType,followerCount,followingCount,ranking,slogan) => {
