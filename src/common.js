@@ -181,27 +181,35 @@ const renderNameTitle = (name, color, ccfLevel, title, cardWidth, rightTop) => {
  * @param {number} followingCount 此用户关注的人数
  * @param {string} slogan 个性签名
  */
-const renderAboutText = (followerCount,followingCount,slogan) => {
+const renderAboutText = (userType,followerCount,followingCount,ranking,slogan) => {
   let line1 = `
-    <g transform="translate(0,0)">
-      <text x="0" y="15" class="text">TA关注了${followingCount}人，共有${followerCount}人关注TA。</text>
+    <g transform="translate(30,0)">
+      <text x="0" y="15" class="text">用户类型：${userType}</text>
     </g>`
-  let line2 = "";
+  let line2 = `
+    <g transform="translate(30,30)">
+      <text x="0" y="15" class="text">TA关注了${followingCount}人，共有${followerCount}人关注TA</text>
+    </g>`
+  let line3 = `
+    <g transform="translate(30,60)">
+      <text x="0" y="15" class="text">咕值排名：第${ranking}名</text>
+    </g>`
+  let line4 = "";
   if(slogan)
   {
-    line2 = `
-      <g transform="translate(0,30)">
+    line4 = `
+      <g transform="translate(30,90)">
         <text x="0" y="15" class="text">${slogan}</text>
       </g>`
   }
   else
   {
-    line2 = `
+    line4 = `
         <g transform="translate(0,30)">
           <text x="0" y="15" class="text" fill="#848484">这个人很懒，连个性签名也懒得写</text>
         </g>`
   }
-  return line1+line2;
+  return line1+line2+line3+line4;
 }
 module.exports = { 
   NAMECOLOR,
