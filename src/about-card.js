@@ -24,7 +24,9 @@ async function fetchAbout(id) {
     ccfLevel: 0,
     slogan: "",
     followerCount: 0,
-    followingCount:0
+    followingCount:0,
+    ranking:-1,
+    userType:"Not found."
   }
   if(res.data.code !== 200) {
     return about;
@@ -37,6 +39,8 @@ async function fetchAbout(id) {
   about.slogan = user.slogan;
   about.followerCount = user.followerCount;
   about.followingCount = user.followingCount;
+  about.ranking = user.ranking;
+  about.userType = user.isAdmin?"管理员":(isBanned?"封禁用户":"普通用户");
   
   return about;
 }
@@ -48,7 +52,9 @@ const renderSVG = (about, options) => {
     ccfLevel,
     slogan,
     followerCount,
-    followingCount
+    followingCount,
+    ranking,
+    userType
   } = about;
   
   const { 
@@ -58,7 +64,7 @@ const renderSVG = (about, options) => {
   } = options || {};
   
   const paddingX = 25;
-  const body = renderAboutText(about.followerCount,about.followingCount,about.slogan);
+  const body = renderAboutText(about.userType,about.followerCount,about.followingCount,about.ranking,about.slogan);
   const title = renderNameTitle(name, color, ccfLevel, "的基本信息", cardWidth, "");
   
   return new Card({
