@@ -40,7 +40,7 @@ async function fetchAbout(id) {
   about.followerCount = user.followerCount;
   about.followingCount = user.followingCount;
   about.ranking = user.ranking;
-  about.userType = user.isAdmin?"管理员":(isBanned?"封禁用户":"普通用户");
+  about.userType = user.isAdmin?"管理员":(user.isBanned?"封禁用户":"普通用户");
   
   return about;
 }
@@ -64,19 +64,17 @@ const renderSVG = (about, options) => {
   } = options || {};
   
   const paddingX = 25;
-  const body = renderAboutText(about.userType,about.followerCount,about.followingCount,about.ranking,about.slogan);
+  const body = renderAboutText(userType,followerCount,followingCount,ranking,slogan);
   const title = renderNameTitle(name, color, ccfLevel, "的基本信息", cardWidth, "");
   
   return new Card({
     width: cardWidth - 2*paddingX,
-    height: 200 + 10,
+    height: 4 * 30 + 10,
     hideTitle,
     darkMode,
     title,
     body,
   }).render();
-  
-  //return `<svg>${title}${body}</svg>`;
 }
 
 module.exports = { fetchAbout, renderSVG }
