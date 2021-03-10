@@ -1,4 +1,4 @@
-> 该项目是由[wao3/luogu-stats-card](https://github.com/wao3/luogu-stats-card)复制过来并加以改编的，感谢TA的贡献。
+> 该项目是由[wao3/luogu-stats-card](https://github.com/wao3/luogu-stats-card)复制过来并加以二次开发的的，感谢TA的贡献。
 
 > 注意：为了不滥用洛谷服务器流量，本项目利用 vercel 的边缘缓存功能缓存了 12 小时数据，即同一个用户卡片 **24 小时内最多只会向洛谷服务器请求 2 次数据**，并且只有在用户访问卡片时才会请求数据。
 ## 简介
@@ -9,7 +9,7 @@
 ![last commit](https://badgen.net/github/last-commit/cyrxdzj/luogu-card?cache=600)
 ![top language](https://img.shields.io/github/languages/top/cyrxdzj/luogu-card)
 
-`luogu-card`是一个动态生成洛谷用户练习数据卡片的工具，可以展示自己的做题情况。可以用于个人主页、博客、github等可以插入图片的地方。
+`luogu-card`是一个动态生成洛谷用户数据卡片的工具，可以展示自己的做题情况。可以用于个人主页、博客、github等可以插入图片的地方。
 
 ## TODO
 
