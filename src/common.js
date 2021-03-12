@@ -52,8 +52,8 @@ class Card {
       <svg xmlns="http://www.w3.org/2000/svg" width="${cardSize.width}" height="${cardSize.height}" viewBox="0 0 ${cardSize.width} ${cardSize.height}" fill="none">
         <style>
           .text { font: 400 11px 'Segoe UI', Ubuntu, Sans-Serif; fill: ${this.darkMode?"#fffefe":"#333333"} }
-          .about-text { font: 400 13px 'Segoe UI', Ubuntu, Sans-Serif; fill: ${this.darkMode?"#fffefe":"#333333"} }
-          .about-text-grey { font: 400 13px 'Segoe UI', Ubuntu, Sans-Serif; fill: #848484 }
+          .about-text { font: 400 11px 'Segoe UI', Ubuntu, Sans-Serif; fill: ${this.darkMode?"#fffefe":"#333333"} }
+          .about-text-grey { font: 400 11px 'Segoe UI', Ubuntu, Sans-Serif; fill: #848484 }
           .title {fill: ${this.darkMode?"#fffefe":"#333333"}}
           .line { stroke:${this.darkMode?"#666666":"#dddddd"}; stroke-width:1 }
           ${this.css}
@@ -197,7 +197,7 @@ const renderAboutText = (userType,followerCount,followingCount,ranking,slogan) =
   }
   else
   {
-    line4 = `<g transform="translate(0,30)"><text x="0" y="15" class="about-text-grey">这个人很懒，连个性签名也懒得写</text></g>`
+    line4 = `<g transform="translate(30,90)"><text x="0" y="15" class="about-text-grey">这个人很懒，连个性签名也懒得写</text></g>`
   }
   return icons+line1+line2+line3+line4;
 }
