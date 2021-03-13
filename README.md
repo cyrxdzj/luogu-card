@@ -22,6 +22,8 @@
 
 ## 效果预览
 
+![dengzijun的基本信息](https://luogu-card.vercel.app/about?id=387836)
+
 ![dengzijun的练习情况](https://luogu-card.vercel.app/practice?id=387836)
 
 ![dengzijun的咕值信息](https://luogu-card.vercel.app/guzhi?id=387836&scores=100,65,45,15,0)
@@ -30,11 +32,27 @@
 
 ## 如何使用
 
+### 基本信息
+
+此卡片用于显示一个用户的基本信息，包括用户类型、关注、咕值排名、个性签名，具体使用方法如下：
+
+1. 仅使用图片：直接复制以下内容到任意 markdown 编辑器中，并将`?id=`后面的数字更改为自己的 id 即可（id是洛谷的用户编号）。
+
+   ```markdown
+   ![dengzijun的基本信息](https://luogu-card.vercel.app/about?id=387836)
+   ```
+
+2. 使用图片链接：复制以下内容，第二个小括号内的地址是点击该图片跳转的地址，建议设置为洛谷个人主页。
+
+   ```markdown
+   [![dengzijun的基本信息](https://luogu-card.vercel.app/about?id=387836)](https://github.com/cyrxdzj/luogu-card)
+   ```
+
 ### 练习情况
 
 练习情况可以自动获取用户的数据，但是前提是没有开启“完全隐私保护”，具体使用方法如下：
 
-1. 仅使用图片：直接复制以下内容到任意 markdown 编辑器中，并将`?id=`后面的数字更改为自己的 id 即可（id是洛谷个人主页地址的一串数字）。
+1. 仅使用图片：直接复制以下内容到任意 markdown 编辑器中，并将`?id=`后面的数字更改为自己的 id 即可（id是洛谷的用户编号）。
 
    ```markdown
    ![dengzijun的练习情况](https://luogu-card.vercel.app/practice?id=387836)
@@ -48,7 +66,7 @@
 
 ### 咕值信息
 
-咕值信息无法自动获取数据，如果需要必须要提供 cookie ，但是 这种方法十分不安全，并且不方便，所以获取咕值卡片需要手动输入咕值信息，具体使用方法如下。
+咕值信息无法自动获取数据，如果需要必须要提供 cookie ，但是这种方法十分不安全，并且不方便，所以获取咕值卡片需要手动输入咕值信息，具体使用方法如下：
 
 复制以下内容到任意 markdown 编辑器中，并将 `?id=`后面的数字更改为自己的 id，将`scores=`后面更换为自己的咕值信息，一共 5 个数字，用逗号分隔。
 
