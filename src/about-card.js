@@ -64,7 +64,7 @@ const renderSVG = (about, options) => {
   } = options || {};
   
   const paddingX = 25;
-  const body = renderAboutText(userType,followerCount,followingCount,ranking,slogan);
+  const body = renderAboutText(userType,followerCount,followingCount,ranking,slogan,darkMode);
   const title = renderNameTitle(name, color, ccfLevel, "的基本信息", cardWidth, "");
   
   return new Card({
