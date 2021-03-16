@@ -166,7 +166,8 @@ const renderNameTitle = (name, color, ccfLevel, title, cardWidth, rightTop, tag)
   const tagLength = anafanafo(tag)/10*1.2;
   const nameLength = anafanafo(name)/10*1.8;
   const nameColor = NAMECOLOR[color];
-  const tagSVG = tag?`<text x="${nameLength + (ccfLevel < 3 ? 10 : 28)}" y="3" fill="white" background="${nameColor}" font-weight="bold" textLength="${tagLength}" font-size="12">${tag}</text>`:``;
+  const tagSVG = tag?`
+        <defs><filter x="0" y="0" width="1" height="1" id="solid"><feFlood flood-color="${nameColor}"/><feComposite in="SourceGraphic"/></filter></defs><text x="${nameLength + (ccfLevel < 3 ? 10 : 28)}" y="3" fill="white" font-weight="bold" textLength="${tagLength}" font-size="12">${tag}</text>`:``;
 
   return `
   <g transform="translate(0, 0)" font-family="Verdana, Microsoft Yahei" text-rendering="geometricPrecision">
