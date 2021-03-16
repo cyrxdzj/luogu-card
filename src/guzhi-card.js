@@ -24,6 +24,7 @@ const renderGuzhiCard = (userInfo, scores, options) => {
     name,
     color,
     ccfLevel,
+    tag
   } = userInfo || {};
 
   const { 
