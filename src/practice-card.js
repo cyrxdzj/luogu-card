@@ -34,6 +34,7 @@ async function fetchStats(id) {
   stats.name = user.name;
   stats.color = user.color;
   stats.ccfLevel = user.ccfLevel;
+  stats.tag = user.badge;
 
   if(!passed) {
     stats.hideInfo = true;
@@ -53,7 +54,8 @@ const renderSVG = (stats, options) => {
     color,
     ccfLevel,
     passed,
-    hideInfo
+    hideInfo,
+    tag
   } = stats;
 
   const { 
@@ -83,7 +85,7 @@ const renderSVG = (stats, options) => {
   const passedSum = passed.reduce((a, b) => a + b);
   const body = renderChart(datas, labelWidth, progressWidth, "题");
 
-  const title = renderNameTitle(name, color, ccfLevel, "的练习情况", cardWidth, `已通过: ${passedSum}题`);
+  const title = renderNameTitle(name, color, ccfLevel, "的练习情况", cardWidth, `已通过: ${passedSum}题`,tag);
 
   return new Card({
     width: cardWidth - 2*paddingX,
