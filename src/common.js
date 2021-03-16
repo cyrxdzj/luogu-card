@@ -158,17 +158,24 @@ const renderChart = (datas, labelWidth, progressWidth, unit) => { //(label, colo
  * @param {string} title 标题的后缀
  * @param {string} rightTop 右上角的标签（展示总数）
  */
-const renderNameTitle = (name, color, ccfLevel, title, cardWidth, rightTop) => {
+const renderNameTitle = (name, color, ccfLevel, title, cardWidth, rightTop, tag) => {
+  if(color="Cheater")
+  {
+    tag="作弊者";
+  }
+  const tagLength = anafanafo(tag)/10*1.2;
   const nameLength = anafanafo(name)/10*1.8;
   const nameColor = NAMECOLOR[color];
+  const tagSVG = tag?`<text x="${nameLength + (ccfLevel < 3 ? 10 : 28)}" y="3" fill="white" background="${nameColor}" font-weight="bold" textLength="${tagLength}" font-size="12">${tag}</text>`:``;
 
   return `
-  <g transform="translate(0, 0)" font-family="Verdana, Microsoft Yahei" text-rendering="geometricPrecision" font-size="18">
-    <text x="0" y="0" fill="${nameColor}" font-weight="bold" textLength="${nameLength}">
+  <g transform="translate(0, 0)" font-family="Verdana, Microsoft Yahei" text-rendering="geometricPrecision">
+    <text x="0" y="0" fill="${nameColor}" font-weight="bold" textLength="${nameLength}" font-size="18">
       ${name}
     </text>
     ${ccfLevel < 3 ? "" : renderCCFBadge(ccfLevel, nameLength + 5)}
-    <text x="${nameLength + (ccfLevel < 3 ? 10 : 28)}" y="0" class="title" font-weight="normal">
+    ${tagSVG}
+    <text x="${nameLength + (ccfLevel < 3 ? 10 : 28) + (tag?tagLength+5:0)}" y="0" class="title" font-weight="normal" font-size="18">
       ${title}
     </text>
     <text x="${cardWidth - 160}" y="0" class="title" font-weight="normal" font-size="13px">
