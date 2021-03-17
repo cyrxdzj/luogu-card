@@ -36,13 +36,13 @@ async function fetchAbout(id) {
   
   about.name = decodeURI(user.name);
   about.color = decodeURI(user.color);
-  about.ccfLevel = decodeURI(user.ccfLevel);
+  about.ccfLevel = user.ccfLevel;
   about.slogan = decodeURI(user.slogan);
-  about.followerCount = decodeURI(user.followerCount);
-  about.followingCount = decodeURI(user.followingCount);
-  about.ranking = decodeURI(user.ranking);
+  about.followerCount = user.followerCount;
+  about.followingCount = user.followingCount;
+  about.ranking = user.ranking;
   about.userType = user.isAdmin?"管理员":(user.isBanned?"封禁用户":"普通用户");
-  about.tag = user.badge;
+  about.tag = decodeURI(user.badge);
   
   return about;
 }
