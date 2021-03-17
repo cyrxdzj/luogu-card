@@ -14,9 +14,9 @@ const {
  */
 async function fetchAbout(id) {
   //debug 测试请求
-  const res = await axios.get(`https://tc-0glpuj1k4e75e5ec-1300876583.ap-shanghai.service.tcloudbase.com/luogu?id=${id}`);
+  //const res = await axios.get(`https://tc-0glpuj1k4e75e5ec-1300876583.ap-shanghai.service.tcloudbase.com/luogu?id=${id}`);
 
-  //const res = await axios.get(`https://www.luogu.com.cn/user/${id}?_contentOnly`)
+  const res = await axios.get(`https://www.luogu.com.cn/user/${id}?_contentOnly`)
 
   const about = {
     name: "NULL",
@@ -34,13 +34,13 @@ async function fetchAbout(id) {
   }
   const user = res.data.currentData.user;
   
-  about.name = user.name;
-  about.color = user.color;
-  about.ccfLevel = user.ccfLevel;
-  about.slogan = user.slogan;
-  about.followerCount = user.followerCount;
-  about.followingCount = user.followingCount;
-  about.ranking = user.ranking;
+  about.name = decodeURI(user.name);
+  about.color = decodeURI(user.color);
+  about.ccfLevel = decodeURI(user.ccfLevel);
+  about.slogan = decodeURI(user.slogan);
+  about.followerCount = decodeURI(user.followerCount);
+  about.followingCount = decodeURI(user.followingCount);
+  about.ranking = decodeURI(user.ranking);
   about.userType = user.isAdmin?"管理员":(user.isBanned?"封禁用户":"普通用户");
   about.tag = user.badge;
   
