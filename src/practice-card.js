@@ -13,9 +13,9 @@ const {
  */
 async function fetchStats(id) {
   //debug 测试请求
-  const res = await axios.get(`https://tc-0glpuj1k4e75e5ec-1300876583.ap-shanghai.service.tcloudbase.com/luogu?id=${id}`);
+  //const res = await axios.get(`https://tc-0glpuj1k4e75e5ec-1300876583.ap-shanghai.service.tcloudbase.com/luogu?id=${id}`);
 
-  //const res = await axios.get(`https://www.luogu.com.cn/user/${id}?_contentOnly`)
+  const res = await axios.get(`https://www.luogu.com.cn/user/${id}?_contentOnly`)
 
   const stats = {
     name: "NULL",
@@ -31,10 +31,10 @@ async function fetchStats(id) {
   const user = res.data.currentData.user;
   const passed = res.data.currentData.passedProblems;
 
-  stats.name = user.name;
+  stats.name = decodeURI(user.name);
   stats.color = user.color;
   stats.ccfLevel = user.ccfLevel;
-  stats.tag = user.badge;
+  stats.tag = decodeURI(user.badge);
 
   if(!passed) {
     stats.hideInfo = true;
