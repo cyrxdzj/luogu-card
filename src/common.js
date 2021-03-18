@@ -159,6 +159,10 @@ const renderChart = (datas, labelWidth, progressWidth, unit) => { //(label, colo
  * @param {string} rightTop 右上角的标签（展示总数）
  */
 const renderNameTitle = (name, color, ccfLevel, title, cardWidth, rightTop, tag) => {
+  if(tag=="null")
+  {
+    tag="";
+  }
   if(color=="Cheater")
   {
     tag="作弊者";
