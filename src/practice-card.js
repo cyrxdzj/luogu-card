@@ -65,7 +65,7 @@ const renderSVG = (stats, options) => {
   } = options || {};
 
   if(hideInfo) {
-    return renderError("用户开启了“完全隐私保护”，获取数据失败", options={width:400});
+    return renderError("用户开启了“完全隐私保护”，获取数据失败", options={width:360});
   }
   
   const paddingX = 25;
