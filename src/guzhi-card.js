@@ -51,7 +51,7 @@ const renderGuzhiCard = (userInfo, scores, options) => {
     {label: "获得成就", data: scoreArray[4], color: getScoreColor(scoreArray[4])},
   ]
 
-  const title = userInfo != null ? renderNameTitle(name, color, ccfLevel, "的咕值信息", cardWidth, `总咕值: ${scoreSum}分`) : "";
+  const title = userInfo != null ? renderNameTitle(name, color, ccfLevel, "的咕值信息", cardWidth, `总咕值: ${scoreSum}分`, tag) : "";
 
   const body = renderChart(datas, labelWidth, progressWidth, "分");
 
