@@ -8,7 +8,7 @@ const {
 const renderGuzhiCard = (userInfo, scores, options) => {
   const regNum = /^\d*$/;
   if(!scores || typeof scores !== 'string') {
-    return renderError('咕值信息不能为空', {width: 400});
+    return renderError('咕值信息不能为空', options={width:360});
   }
   let sp = ',';
   if(scores.indexOf('，') >= 0) {
@@ -16,7 +16,7 @@ const renderGuzhiCard = (userInfo, scores, options) => {
   }
   const scoreArray = scores.split(sp).filter(x => regNum.test(x)).map(x => parseInt(x)).filter(x => x >= 0 && x <= 100);
   if(scoreArray.length != 5) {
-    return renderError(`咕值信息"${scores}"不合法`, {width: 400});
+    return renderError(`咕值信息"${scores}"不合法`, options={width:360});
   }
   const scoreSum = scoreArray.reduce((a, b) => a+b);
 
