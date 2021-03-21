@@ -39,7 +39,7 @@ class Card {
 
   render() {
     var d = new Date();
-    var beijingtime = new Date(d.getTime() + d.getTimezoneOffset()*60000 + 3600000*8);
+    var beijingtime = new Date(d.getTime() + (parseInt(d.getTimezoneOffset()/60) + 8) * 3600 * 1000);
     
     const cardSize = {
       width: this.width + 2*this.paddingX,
