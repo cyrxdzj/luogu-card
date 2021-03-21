@@ -38,6 +38,9 @@ class Card {
   }
 
   render() {
+    var d = new Date();
+    var beijingtime = new Date(d.getTime() + d.getTimezoneOffset()*60000 + 3600000*8);
+    
     const cardSize = {
       width: this.width + 2*this.paddingX,
       height: this.height + 2*this.paddingY,
@@ -68,6 +71,7 @@ class Card {
         <g transform="translate(${this.paddingX}, ${this.hideTitle ? this.paddingY : this.paddingY + this.titleHeight})">
           ${this.body}
         </g>
+        <g transform="translate(${this.paddingX}, ${cardSize.width - this.paddingY - 11})"><text x="0" y="15" class="about-text-grey">卡片生成时间：${beijingtime}</text></g>
       </svg>`;
   }
 }
