@@ -39,7 +39,8 @@ class Card {
 
   render() {
     var d = new Date();
-    var beijingtime = new Date(d.getTime() + (parseInt(d.getTimezoneOffset()/60) + 8) * 3600 * 1000);
+    var beijingTime = new Date(d.getTime() + (parseInt(d.getTimezoneOffset()/60) + 8) * 3600 * 1000);
+    var timeStr = `${beijingTime.getFullYear()}-${beijingTime.getMonth()<10?"0":""}${beijingTime.getMonth()}-${beijingTime.getDay()<10?"0":""}${beijingTime.getMDay()} ${beijingTime.getHour()<10?"0":""}${beijingTime.getHour()}:${beijingTime.getMinute()<10?"0":""}${beijingTime.getMinute()}:${beijingTime.getSecond()<10?"0":""}${beijingTime.getSecond()}`
     
     const cardSize = {
       width: this.width + 2*this.paddingX,
@@ -71,7 +72,7 @@ class Card {
         <g transform="translate(${this.paddingX}, ${this.hideTitle ? this.paddingY : this.paddingY + this.titleHeight})">
           ${this.body}
         </g>
-        <g transform="translate(${this.paddingX}, ${cardSize.height - this.paddingY - 11})"><text x="0" y="15" class="about-text-grey">卡片生成时间：${beijingtime}</text></g>
+        <g transform="translate(${this.paddingX}, ${cardSize.height - this.paddingY})"><text x="0" y="15" class="about-text-grey">卡片生成时间：${timeStr}</text></g>
       </svg>`;
   }
 }
