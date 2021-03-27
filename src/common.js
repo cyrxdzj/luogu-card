@@ -40,7 +40,7 @@ class Card {
     render() {
         var d = new Date();
         var beijingTime = new Date(d.getTime() + (parseInt(d.getTimezoneOffset()/60) + 8) * 3600 * 1000);
-        var timeStr = `${beijingTime.getFullYear()}-${(beijingTime.getMonth()+1)<10?"0":""}${beijingTime.getMonth()+1}-${beijingTime.getDay()<10?"0":""}${beijingTime.getDay()} ${beijingTime.getHours()<10?"0":""}${beijingTime.getHours()}:${beijingTime.getMinutes()<10?"0":""}${beijingTime.getMinutes()}:${beijingTime.getSeconds()<10?"0":""}${beijingTime.getSeconds()}`
+        var timeStr = `${beijingTime.getFullYear()}-${(beijingTime.getMonth()+1)<10?"0":""}${beijingTime.getMonth()+1}-${beijingTime.getDate()<10?"0":""}${beijingTime.getDate()} ${beijingTime.getHours()<10?"0":""}${beijingTime.getHours()}:${beijingTime.getMinutes()<10?"0":""}${beijingTime.getMinutes()}:${beijingTime.getSeconds()<10?"0":""}${beijingTime.getSeconds()}`
         
         const cardSize = {
             width: this.width + 2*this.paddingX,
