@@ -8,7 +8,6 @@
 ![visitor](https://visitor-badge.laobi.icu/badge?page_id=luogu-card)
 ![last commit](https://badgen.net/github/last-commit/cyrxdzj/luogu-card?cache=600)
 ![top language](https://img.shields.io/github/languages/top/cyrxdzj/luogu-card)
-
 `luogu-card`是一个动态生成洛谷用户数据卡片的工具，可以展示自己的做题情况。可以用于个人主页、博客、github等可以插入图片的地方。
 
 ## TODO
@@ -144,3 +143,12 @@
 ## LICENSE
 
 [![GNU Lesser General Public License v2.1](https://badgen.net/github/license/cyrxdzj/luogu-card)](https://github.com/cyrxdzj/luogu-card/blob/master/LICENSE)
+
+## 镜像仓库
+
+~~要不是vercel不支持Gitee只支持Github，我也不会出现在这里了~~
+
+本仓库在码云Gitee上创建了一个[镜像仓库](https://gitee.com/cyrxdzj/luogu-card)，但会有同步延迟。也可以访问位于Github的[源仓库](https://github.com/cyrxdzj/luogu-card)。
+
+[![star](https://gitee.com/cyrxdzj/luogu-card/badge/star.svg?theme=dark)](https://gitee.com/cyrxdzj/luogu-card/stargazers)
+[![残阳如血/luogu-card](https://gitee.com/cyrxdzj/luogu-card/widgets/widget_card.svg?colors=eae9d7,2e2f29,272822,484a45,eae9d7,747571)](https://gitee.com/cyrxdzj/luogu-card)
