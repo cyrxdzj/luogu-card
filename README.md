@@ -151,4 +151,5 @@
 本仓库在码云Gitee上创建了一个[镜像仓库](https://gitee.com/cyrxdzj/luogu-card)，但会有同步延迟。也可以访问位于Github的[源仓库](https://github.com/cyrxdzj/luogu-card)。
 
 [![star](https://gitee.com/cyrxdzj/luogu-card/badge/star.svg?theme=dark)](https://gitee.com/cyrxdzj/luogu-card/stargazers)
+
 [![残阳如血/luogu-card](https://gitee.com/cyrxdzj/luogu-card/widgets/widget_card.svg?colors=eae9d7,2e2f29,272822,484a45,eae9d7,747571)](https://gitee.com/cyrxdzj/luogu-card)
