@@ -1,5 +1,5 @@
 const { renderGuzhiCard } = require("../src/guzhi-card.js");
-const { fetchStats } = require("../src/practice-card.js");
+const { fetchAbout } = require("../src/about-card.js");
 const { renderError } = require("../src/common.js")
 
 module.exports = async (req, res) => {
@@ -20,15 +20,15 @@ module.exports = async (req, res) => {
     return res.send(renderError(`"${id}"不是一个合法uid`, {darkMode: dark_mode}));
   }
 
-  let stats = null;
+  let about = null;
 
   if(id != undefined) {
-    stats = await fetchStats(id);
+    about = await fetchAbout(id);
   }
 
   return res.send(
-    renderGuzhiCard(stats, scores, {
-      hideTitle: stats === null ? true : hide_title,
+    renderGuzhiCard(about, scores, {
+      hideTitle: about === null ? true : hide_title,
       darkMode: dark_mode,
       cardWidth: clamp(500, 1920, card_width),
     })
