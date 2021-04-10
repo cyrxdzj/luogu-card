@@ -6,7 +6,7 @@ const {
     renderNameTitle,
 } = require("./common.js");
 
-async function fetchAbout(id, ranking) {
+async function fetchGuzhi(id, ranking) {
     var page=ranking/50+(ranking%50==0?1:0);
     var index=(ranking-1)%50;
     
