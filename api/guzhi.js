@@ -29,7 +29,7 @@ module.exports = async (req, res) => {
     
     if(about.ranking>=1&&about.ranking<=1000)
     {
-        finally_scores=fetchGuzhi(id, about.ranking);
+        finally_scores=await fetchGuzhi(id, about.ranking);
         if(finally_scores=="Not found.")
         {
             finally_scores=scores;
