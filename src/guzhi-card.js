@@ -1,30 +1,9 @@
-const axios = require("axios");
 const {
     Card,
     renderError,
     renderChart,
     renderNameTitle,
 } = require("./common.js");
-
-async function fetchGuzhi(id, ranking) {
-    var page=ranking/50+(ranking%50==0?1:0);
-    var index=(ranking-1)%50;
-    
-    const res = await axios.get(`https://www.luogu.com.cn/ranking?page=${page}&_contentOnly`);
-    
-    if(res.data.code !== 200) {
-        return "Not found.";
-    }
-    
-    const rankList=res.data.currentData.rankList.result;
-    
-    if(rankList[index].user.uid!=id)
-    {
-        return "Not found.";
-    }
-    
-    return "${rankList[index].basicRating},${rankList[index].socialRating},${rankList[index].contestRating},${rankList[index].practiceRating},${rankList[index].prizeRating}"
-}
 
 const renderGuzhiCard = (userInfo, scores, options) => {
     const regNum = /^\d*$/;
