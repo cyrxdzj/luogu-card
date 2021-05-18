@@ -20,7 +20,7 @@ async function fetchGuzhi(id, ranking) {
         return "Not found.";
     }
     
-    return "${rankList[index].basicRating},${rankList[index].socialRating},${rankList[index].contestRating},${rankList[index].practiceRating},${rankList[index].prizeRating}"
+    return `${rankList[index].basicRating},${rankList[index].socialRating},${rankList[index].contestRating},${rankList[index].practiceRating},${rankList[index].prizeRating}`
 }
 
 module.exports = async (req, res) => {
