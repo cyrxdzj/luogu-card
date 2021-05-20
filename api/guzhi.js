@@ -4,7 +4,7 @@ const { renderError } = require("../src/common.js")
 const axios = require("axios");
 
 async function fetchGuzhi(id, ranking) {
-    var page=ranking/50+(ranking%50==0?1:0);
+    var page=ranking/50+(ranking%50==0?0:1);
     var index=(ranking-1)%50;
     
     const res = await axios.get(`https://www.luogu.com.cn/ranking?page=${page}&_contentOnly`);
