@@ -7,7 +7,8 @@ async function fetchGuzhi(id, ranking) {
     var page=parseInt(ranking/50+(ranking%50==0?0:1));
     var index=(ranking-1)%50;
     
-    const res = await axios.get(`https://www.luogu.com.cn/ranking?page=${page}&_contentOnly`);
+    const res = await axios.get(`https://www.luogu.com.cn/ranking?page=${page}&_contentOnly`,
+                                {headers:{"User-Agent","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36"});
     
     if(res.data.code != 200) {
         return "Not found.";
