@@ -9,7 +9,7 @@ async function fetchGuzhi(id, ranking) {
     
     const res = await axios.get(`https://www.luogu.com.cn/ranking?page=${page}&_contentOnly`);
     
-    if(res.data.code !== 200) {
+    if(res.data.code != 200) {
         return "Not found.";
     }
     
