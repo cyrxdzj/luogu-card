@@ -16,10 +16,10 @@ async function fetchGuzhi(id, ranking) {
     
     const rankList=res.data.currentData.rankList.result;
     
-    if(rankList[index].user.uid!=parseInt(id))
+    /*if(rankList[index].user.uid!=parseInt(id))
     {
         return "Not found.";
-    }
+    }*/
     
     return `${rankList[index].basicRating},${rankList[index].socialRating},${rankList[index].contestRating},${rankList[index].practiceRating},${rankList[index].prizeRating}`
 }
