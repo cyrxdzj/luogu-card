@@ -16,7 +16,7 @@ async function fetchGuzhi(id, ranking) {
     
     const rankList=res.data.currentData.rankList.result;
     
-    if(rankList[index].user.uid!=id)
+    if(rankList[index].user.uid!=parseInt(id))
     {
         return "Not found.";
     }
