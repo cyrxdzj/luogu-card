@@ -4,7 +4,7 @@ const { renderError } = require("../src/common.js")
 const axios = require("axios");
 
 async function fetchGuzhi(id, ranking) {
-    var page=parseInt(ranking/50+(ranking%50==0?0:1));
+    var page=Math.floor((ranking-1)/50) + 1;
     
     const res = await axios.get(`https://www.luogu.com.cn/ranking?page=${page}&_contentOnly`);
     
@@ -21,8 +21,8 @@ async function fetchGuzhi(id, ranking) {
         if(rankList[index].user.uid==id) {
             return `${rankList[index].basicRating},${rankList[index].socialRating},${rankList[index].contestRating},${rankList[index].practiceRating},${rankList[index].prizeRating}`;
         }
-        return `Not found.`;
     }
+    return `Not found.`;
 }
 
 module.exports = async (req, res) => {
