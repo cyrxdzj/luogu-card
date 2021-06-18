@@ -12,7 +12,7 @@ module.exports = async (req, res) => {
 
     res.setHeader("Content-Type", "image/svg+xml");
     if(!disable_cache) {
-        res.setHeader(`Cache-Control", "public, max-age=43200`); // 43200s（12h） cache
+        res.setHeader("Cache-Control", "public, max-age=43200"); // 43200s（12h） cache
     }
 
     const validId = /^[1-9]\d*$/;
