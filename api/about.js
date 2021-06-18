@@ -6,12 +6,14 @@ module.exports = async (req, res) => {
         id, 
         hide_title, 
         dark_mode,
+        disable_cache,
         card_width = 500,
-        cache_set = 43200
     } = req.query;
 
     res.setHeader("Content-Type", "image/svg+xml");
-    res.setHeader(`Cache-Control", "public, max-age=${cache_set}`);
+    if(!disable_cache) {
+        res.setHeader(`Cache-Control", "public, max-age=43200`); // 43200s（12h） cache
+    }
 
     const validId = /^[1-9]\d*$/;
     const clamp = (min, max, n) => Math.max(min, Math.min(max, n));
