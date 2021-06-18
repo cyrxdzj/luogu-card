@@ -19,7 +19,7 @@ async function fetchGuzhi(id, ranking) {
             continue;
         }
         if(rankList[index].user.uid==id) {
-            return `${rankList[index].basicRating},${rankList[index].socialRating},${rankList[index].contestRating},${rankList[index].practiceRating},${rankList[index].prizeRating}`;
+            return `${rankList[index].basicRating},${rankList[index].practiceRating},${rankList[index].socialRating},${rankList[index].contestRating},${rankList[index].prizeRating}`;
         }
     }
     return `Not found.`;
