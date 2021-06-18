@@ -5,10 +5,8 @@ const axios = require("axios");
 
 async function fetchGuzhi(id, ranking) {
     var page=parseInt(ranking/50+(ranking%50==0?0:1));
-    var index=(ranking-1)%50+1;
     
-    const res = await axios.get(`https://www.luogu.com.cn/ranking?page=${page}&_contentOnly`,
-                                {headers:{"User-Agent":"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36"}});
+    const res = await axios.get(`https://www.luogu.com.cn/ranking?page=${page}&_contentOnly`);
     
     if(res.data.code != 200) {
         return "Not found.";
@@ -16,12 +14,14 @@ async function fetchGuzhi(id, ranking) {
     
     const rankList=res.data.currentData.rankList.result;
     
-    if(rankList[index].user.uid!=parseInt(id))
-    {
-        return "Not found.";
-    }
-    
-    return `${rankList[index].basicRating},${rankList[index].socialRating},${rankList[index].contestRating},${rankList[index].practiceRating},${rankList[index].prizeRating}`
+    for(var index=0;index<50;index++) {
+        if(!rankList[index]) {
+            continue;
+        }
+        if(rankList[index].user.uid==id) {
+            return `${rankList[index].basicRating},${rankList[index].socialRating},${rankList[index].contestRating},${rankList[index].practiceRating},${rankList[index].prizeRating}`
+        }
+        return `Not found.`;
 }
 
 module.exports = async (req, res) => {
