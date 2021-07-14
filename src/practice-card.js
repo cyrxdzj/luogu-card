@@ -22,6 +22,7 @@ async function fetchStats(id) {
         color: "Gray",
         ccfLevel: 0,
         passed: [0,0,0,0,0,0,0,0],
+        unpassed: 0,
         hideInfo: false
     }
     if(res.data.code !== 200) {
@@ -35,6 +36,7 @@ async function fetchStats(id) {
     stats.color = user.color;
     stats.ccfLevel = user.ccfLevel;
     stats.tag = decodeURI(user.badge);
+    stats.unpassed = res.data.currentData.submittedProblems.length();
 
     if(!passed) {
         stats.hideInfo = true;
@@ -54,6 +56,7 @@ const renderSVG = (stats, options) => {
         color,
         ccfLevel,
         passed,
+        unpassed,
         hideInfo,
         tag
     } = stats;
@@ -80,7 +83,8 @@ const renderSVG = (stats, options) => {
         {label: "普及+/提高", color:"#52c41a", data: passed[4]},
         {label: "提高+/省选-", color:"#3498db", data: passed[5]},
         {label: "省选/NOI-", color:"#9d3dcf", data: passed[6]},
-        {label: "NOI/NOI+/CTSC", color:"#0e1d69", data: passed[7]}
+        {label: "NOI/NOI+/CTSC", color:"#0e1d69", data: passed[7]},
+        {label: "心有余而力不足", color:"#0101DF", data: unpassed}
     ]
     const passedSum = passed.reduce((a, b) => a + b);
     const body = renderChart(datas, labelWidth, progressWidth, "题");
