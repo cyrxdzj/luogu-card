@@ -36,7 +36,7 @@ async function fetchStats(id) {
     stats.color = user.color;
     stats.ccfLevel = user.ccfLevel;
     stats.tag = decodeURI(user.badge);
-    stats.unpassed = res.data.currentData.submittedProblems.length();
+    stats.unpassed = res.data.currentData.submittedProblems.length;
 
     if(!passed) {
         stats.hideInfo = true;
