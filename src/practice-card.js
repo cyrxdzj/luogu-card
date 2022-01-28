@@ -32,16 +32,16 @@ async function fetchStats(id) {
     const user = res.data.currentData.user;
     const passed = res.data.currentData.passedProblems;
 
+    if(!passed) {
+        stats.hideInfo = true;
+        return stats;
+    }
+
     stats.name = decodeURI(user.name);
     stats.color = user.color;
     stats.ccfLevel = user.ccfLevel;
     stats.tag = decodeURI(user.badge);
     stats.unpassed = res.data.currentData.submittedProblems.length;
-
-    if(!passed) {
-        stats.hideInfo = true;
-        return stats;
-    }
 
     for(let i of passed) {
         stats.passed[i.difficulty]++;
