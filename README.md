@@ -1,4 +1,4 @@
-** 很快，该项目就会被迁移至Netlify，代码将会基本重写。此分支将会被废弃。**
+**很快，该项目就会被迁移至Netlify，代码将会基本重写。此分支将会被废弃。**
 
 > 该项目是由[wao3/luogu-stats-card](https://github.com/wao3/luogu-stats-card)复制过来并加以二次开发的的，感谢TA的贡献。
 
