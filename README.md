@@ -2,6 +2,8 @@
 
 ~~现实告诉我Netlify还是不能用。~~
 
+不过也许可以试试华为云函数？
+
 我又想起了，可以用next.js部署在Netlify上。
 
 > 该项目是由[wao3/luogu-stats-card](https://github.com/wao3/luogu-stats-card)复制过来并加以二次开发的的，感谢TA的贡献。
