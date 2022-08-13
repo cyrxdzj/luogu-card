@@ -5,7 +5,7 @@ const {
     renderNameTitle,
 } = require("./common.js");
 
-const renderGuzhiCard = (userInfo, scores, options) => {
+const renderGuzhiCard = (userInfo, scores, options,time) => {
     const regNum = /^\d*$/;
     if(!scores || typeof scores !== 'string') {
         return renderError('咕值信息不能为空', options={width:360});
@@ -62,6 +62,7 @@ const renderGuzhiCard = (userInfo, scores, options) => {
         darkMode,
         title,
         body,
+        time
     }).render();
 }
 

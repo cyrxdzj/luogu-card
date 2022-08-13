@@ -26,8 +26,8 @@ async function fetchGuzhi(id, ranking) {
 }
 
 module.exports = async (req, res) => {
-    const { id, scores, hide_title, dark_mode, disable_cache, card_width = 500 } = req.query;
-    var finally_scores
+    const { id, scores, hide_title, dark_mode, disable_cache, card_width = 500, update_time=-1} = req.query;
+    var finally_scores,finally_time;
 
     res.setHeader("Content-Type", "image/svg+xml");
     if(!disable_cache){
@@ -58,11 +58,13 @@ module.exports = async (req, res) => {
         if(finally_scores=="Not found.")
         {
             finally_scores=scores;
+            finally_time=-1;
         }
     }
     else
     {
         finally_scores=scores;
+        finally_time=update_time;
     }
 
     return res.send(
@@ -70,6 +72,6 @@ module.exports = async (req, res) => {
             hideTitle: about === null ? true : hide_title,
             darkMode: dark_mode,
             cardWidth: clamp(500, 1920, card_width),
-        })
+        },finally_time)
     );
 };

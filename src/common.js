@@ -23,6 +23,7 @@ class Card {
         paddingX = 25,
         paddingY = 35,
         hideBorder = false,
+        time=-1
     }) {
         this.width = width;
         this.height = height;
@@ -35,11 +36,21 @@ class Card {
         this.paddingX = paddingX;
         this.paddingY = paddingY;
         this.hideBorder = hideBorder;
+        this.time=time;
     }
 
     render() {
         var d = new Date();
-        var beijingTime = new Date(d.getTime() + (parseInt(d.getTimezoneOffset()/60) + 8) * 3600 * 1000);
+        //var beijingTime = new Date(d.getTime() + (parseInt(d.getTimezoneOffset()/60) + 8) * 3600 * 1000);
+        var beijingTime;
+        if(this.time==-1)
+        {
+            beijingTime = new Date(d.getTime() + (parseInt(d.getTimezoneOffset()/60) + 8) * 3600 * 1000);
+        }
+        else
+        {
+            beijingTime = new Date(time);
+        }
         var timeStr = `${beijingTime.getFullYear()}-${(beijingTime.getMonth()+1)<10?"0":""}${beijingTime.getMonth()+1}-${beijingTime.getDate()<10?"0":""}${beijingTime.getDate()} ${beijingTime.getHours()<10?"0":""}${beijingTime.getHours()}:${beijingTime.getMinutes()<10?"0":""}${beijingTime.getMinutes()}:${beijingTime.getSeconds()<10?"0":""}${beijingTime.getSeconds()}`
         
         const cardSize = {
