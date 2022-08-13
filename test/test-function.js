@@ -3,7 +3,8 @@ const {
   renderAboutText,
 } = require("../src/common.js");
 module.exports = async (req, res) => {
-  res.setHeader("Content-Type", "image/svg+xml");
+  res.setHeader("Content-Type", "text/html");
+  return res.send(`${new Date(1660405770259)}`);
   if(req.query.function=="rat")
   {
     return res.send("<svg>"+renderAboutText(req.query.userType,req.query.followerCount,req.query.followingCount,req.query.ranking,req.query.slogan,req.query.darkmode)+"</svg>");
