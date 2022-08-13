@@ -49,10 +49,12 @@ class Card {
         }
         else
         {
-            beijingTime = new Date(this.time);
+            beijingTime = new Date(this.time+(parseInt(d.getTimezoneOffset()/60) + 8) * 3600 * 1000);
         }
         var timeStr = `${beijingTime.getFullYear()}-${(beijingTime.getMonth()+1)<10?"0":""}${beijingTime.getMonth()+1}-${beijingTime.getDate()<10?"0":""}${beijingTime.getDate()} ${beijingTime.getHours()<10?"0":""}${beijingTime.getHours()}:${beijingTime.getMinutes()<10?"0":""}${beijingTime.getMinutes()}:${beijingTime.getSeconds()<10?"0":""}${beijingTime.getSeconds()}`
-        
+        console.log(beijingTime);
+        console.log(this.time);
+        console.log(timeStr);
         const cardSize = {
             width: this.width + 2*this.paddingX,
             height: this.height + 2*this.paddingY,
