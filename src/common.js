@@ -49,7 +49,7 @@ class Card {
         }
         else
         {
-            beijingTime = new Date(time);
+            beijingTime = new Date(this.time);
         }
         var timeStr = `${beijingTime.getFullYear()}-${(beijingTime.getMonth()+1)<10?"0":""}${beijingTime.getMonth()+1}-${beijingTime.getDate()<10?"0":""}${beijingTime.getDate()} ${beijingTime.getHours()<10?"0":""}${beijingTime.getHours()}:${beijingTime.getMinutes()<10?"0":""}${beijingTime.getMinutes()}:${beijingTime.getSeconds()<10?"0":""}${beijingTime.getSeconds()}`
         
