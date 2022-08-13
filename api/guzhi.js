@@ -66,7 +66,10 @@ module.exports = async (req, res) => {
         finally_scores=scores;
         finally_time=update_time;
     }
-
+    if(!regNum.test(update_time))
+    {
+        finally_time=-1;
+    }
     return res.send(
         renderGuzhiCard(about, finally_scores, {
             hideTitle: about === null ? true : hide_title,
