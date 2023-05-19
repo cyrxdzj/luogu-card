@@ -16,7 +16,7 @@ async function fetchAbout(id) {
     //debug 测试请求
     //const res = await axios.get(`https://tc-0glpuj1k4e75e5ec-1300876583.ap-shanghai.service.tcloudbase.com/luogu?id=${id}`);
 
-    const res = await axios.get(`https://www.luogu.com.cn/user/${id}?_contentOnly`)
+    const res = await axios.get(`https://www.luogu.com.cn/user/${id}?_contentOnly`, {headers:{"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36 Edg/113.0.1774.42"}})
 
     const about = {
         name: "NULL",
